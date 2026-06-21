@@ -1,0 +1,72 @@
+
+
+<mat-card>
+
+    <h2>
+         E-Commerce Product Review Form
+    </h2>
+
+
+    <form #ecomform="ngForm"  (ngSubmit)="Onsubmit()">
+
+        <div class="form-group">
+            <label for="cname">Customer Name</label>
+            <input type="text" class="form-control" ngModel required name="cname" #name="ngModel">
+
+            <strong class="text-danger" *ngIf="name.touched && name.hasError('required')">
+                Customer name is required 
+            </strong>
+        </div>
+
+        <div class="form-group">
+            <label for="pname">Product Name</label>
+            <input type="text" class="form-control" ngModel required #pname="ngModel" name="pname">
+
+            <strong class="text-danger" *ngIf="pname.touched && pname.hasError('required')">
+                Product name is required 
+            </strong>
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <mat-checkbox class="ml-3" ngModel required name="rating" #raing="ngModel">⭐</mat-checkbox>
+            <mat-checkbox class="ml-3" ngModel required name="rating" #raing="ngModel">⭐⭐</mat-checkbox>
+            <mat-checkbox class="ml-3" ngModel required name="rating" #raing="ngModel">⭐⭐⭐</mat-checkbox>
+            <mat-checkbox class="ml-3" ngModel required name="rating" #raing="ngModel">⭐⭐⭐⭐</mat-checkbox>
+            <mat-checkbox class="ml-3" ngModel required name="rating" #raing="ngModel">⭐⭐⭐⭐⭐</mat-checkbox>
+
+
+            <div class="text-danger" *ngIf="raing.touched && raing.hasError('required')">
+                Rating is required for product feedback
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="title">Review Title</label>
+            <input type="text" class="form-control" ngModel required name="title" #reviewt="ngModel" minlength="5">
+
+            <strong class="text-danger" *ngIf="reviewt.touched && reviewt.hasError('required')">
+                Review title is required 
+            </strong>
+
+            <strong class="text-danger" *ngIf="reviewt.dirty && reviewt.hasError('minlength')">
+                 Review Title minimum 5 characters
+            </strong>
+        </div>
+
+        <div class="form-group">
+            <label for="description"> Review Description</label>
+            <textarea name="description" id="description" ngModel required class="form-control" #des="ngModel" rows="3" minlength="30"></textarea>
+
+            <strong class="text-danger" *ngIf="des.touched && des.hasError('required')">
+                Review Description is requried 
+            </strong>
+
+            <strong class="text-danger" *ngIf="des.dirty && des.hasError('minlength')">
+                 Description minimum 30 characters
+            </strong>
+        </div>
+
+        <button mat-raised-button color="primary" class="w-100" [disabled]="ecomform.invalid">Submit Review </button>
+    </form>
+</mat-card>
