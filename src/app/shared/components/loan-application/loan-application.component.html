@@ -8,7 +8,7 @@
     <form #loanform="ngForm" (ngSubmit)="OnSubmit()">
 
         <div class="form-group">
-            <label for="fname">Full Name</label>
+            <label for="fname">✔️ Full Name</label>
             <input type="text" name="fname" ngModel required class="form-control" #fname="ngModel">
 
             <strong class="text-danger" *ngIf="fname.touched && fname.hasError('required')">
@@ -17,7 +17,7 @@
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">✔️ Email</label>
             <input
               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
              type="email" ngModel name="email" required class="form-control" #email="ngModel" >
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            <label for="mobile">Mobile Number</label>
+            <label for="mobile">✔️ Mobile Number</label>
             <input type="number" class="form-control" ngModel required name="mobile" #phone="ngModel"   pattern="^[6-9][0-9]{9}$">
 
             <strong class="text-danger" *ngIf="phone.touched && phone.hasError('required')">
@@ -45,7 +45,7 @@
         </div>
 
         <div class="fom-group">
-            <label for="pan">Pan Number</label>
+            <label for="pan">💳 Pan Number</label>
             <input type="text" class="form-control" ngModel required name="pan" #pancard="ngModel"  pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$">
 
             <strong class="text-danger" *ngIf="pancard.touched && pancard.hasError('required')"> 
@@ -58,7 +58,7 @@
         </div>
 
         <div class="form-group">
-            <label for="addhar">Addhar Card Number</label>
+            <label for="addhar">💳 Addhar Card Number</label>
             <input type="number" class="form-control" ngModel required name="addhar" #addhar="ngModel"   pattern="^[0-9]{12}$">
 
             <strong class="text-danger" *ngIf="addhar.touched && addhar.hasError('required')">
@@ -71,7 +71,7 @@
         </div>
 
         <div class="form-group">
-            <label for="income">Annoual Income</label>
+            <label for="income">✔️ Annoual Income</label>
             <input type="number" class="form-control" ngModel required #icome="ngModel" name="income">
 
             <strong class="text-danger" *ngIf="icome.touched && icome.hasError('required')">
@@ -80,7 +80,7 @@
         </div>
 
         <div class="form-group">
-            <label for="loan">Loan Amount</label>
+            <label for="loan">✔️ Loan Amount</label>
             <input type="number" class="form-control" ngModel required name="loan" #loan="ngModel" min="50000">
 
             <strong class="text-danger" *ngIf="loan.touched && loan.hasError('required')">
